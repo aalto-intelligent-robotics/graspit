@@ -2,9 +2,28 @@
 
 <h1>GraspIt!</h1>
 
+## Installing Graspit! on Ubuntu 18.04
+
+### Pre-requisite
+
+* sudo apt install qt4-default
+* [Coin 3D](https://sourceforge.net/p/coin3d/wiki/Coin3D_Build_Instructions_For_Linux/)
+* [SoQT](https://sourceforge.net/p/coin3d-soqt/wiki/Coin3D-SoQt_Build_Instructions_For_Linux/)
+
+### Installing
+
+git clone git@github.com:aalto-intelligent-robotics/graspit.git
+cd graspit
+mkdir build
+cd build
+cmake ..
+make -j5
+sudo make install
+
 Introduction
 ------------
-Please see the User Manual found at http://graspit-simulator.github.io/ for an introduction to GraspIt!, a list of
+
+Please see the User Manual found at <http://graspit-simulator.github.io/> for an introduction to GraspIt!, a list of
 features, installation instructions, getting started examples, etc.
 
 Distribution Contents
@@ -19,29 +38,29 @@ Distribution Contents
 **include**: Header files for the main GraspIt! source code <br />
 **LICENSE.txt**: A copy of the license you accepted when you downloaded this. <br />
 **models**: The geometry and configuration files for all the robots and
-		objects. <br />
-**plugins**:  Examples for creating plugins that can be loaded into GraspIt! 
+  objects. <br />
+**plugins**:  Examples for creating plugins that can be loaded into GraspIt!
                  at run time, and can use GraspIt! without being statically linked
-		 into GraspIt's main executable. <br />
-**ply**:  Code for loading .ply files; see header files for authorship 
+   into GraspIt's main executable. <br />
+**ply**:  Code for loading .ply files; see header files for authorship
                 information and detail. <br />
 **qhull**: A popular package for computing n-dimensional convex hulls.
-		This is used both for the contact system and to create grasp
-	      wrench spaces. <br />
+  This is used both for the contact system and to create grasp
+       wrench spaces. <br />
 **README.md**:  This file. <br />
 **src**:  The source code for GraspIt!. <br />
-**src/DBase**: source code for the interface between GraspIt and the Columbia 
-		Grasp Database <br />
-**tinyxml**: a library for processing XML documents. See the header files 
-		therein for license and author information for this package. <br />
-**ui**:	The dialog windows and interfaces for GraspIt!. <br />
+**src/DBase**: source code for the interface between GraspIt and the Columbia
+  Grasp Database <br />
+**tinyxml**: a library for processing XML documents. See the header files
+  therein for license and author information for this package. <br />
+**ui**: The dialog windows and interfaces for GraspIt!. <br />
 **worlds**: A place to save GraspIt! worlds.  Also includes a few
-		examples. <br />
+  examples. <br />
 
 Examples of How to Integrate GraspIt! into your own Project
 ---------------------
 
-https://github.com/graspit-simulator/graspit_interface <br />
-https://github.com/JenniferBuehler/graspit-pkgs <br />
-https://github.com/ros-interactive-manipulation/graspit_simulator <br />
-https://github.com/OSUrobotics/graspit_ros_plannings <br />
+<https://github.com/graspit-simulator/graspit_interface> <br />
+<https://github.com/JenniferBuehler/graspit-pkgs> <br />
+<https://github.com/ros-interactive-manipulation/graspit_simulator> <br />
+<https://github.com/OSUrobotics/graspit_ros_plannings> <br />
