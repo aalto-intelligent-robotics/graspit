@@ -651,9 +651,7 @@ IVmgr::transRot(DraggerInfo *dInfo)
       myHandleBox->translation.setValue(dInfo->lastTran);
       //if (enabled) myHandleBox->enableValueChangedCallbacks(TRUE);
       return;
-    }
-    SbVec3fTovec3(myHandleBox->translation.getValue(),desiredTranslation);
-    SbVec3fTovec3(dInfo->draggerTran->scaleFactor.getValue(), scale);
+    } SbVec3fTovec3(myHandleBox->translation.getValue(),desiredTranslation); SbVec3fTovec3(dInfo->draggerTran->scaleFactor.getValue(), scale);
     desiredTranslation[0] *= scale[0];
     desiredTranslation[1] *= scale[1];
     desiredTranslation[2] *= scale[2];
@@ -670,10 +668,11 @@ IVmgr::transRot(DraggerInfo *dInfo)
       //if (enabled) myCenterball->enableValueChangedCallbacks(TRUE);
       return;
     }
-    desiredRotation.x() = myCenterball->rotation.getValue()[0];
-    desiredRotation.y() = myCenterball->rotation.getValue()[1];
-    desiredRotation.z() = myCenterball->rotation.getValue()[2];
-    desiredRotation.w() = myCenterball->rotation.getValue()[3];
+    const SbRotation temp = myCenterball->rotation.getValue();
+    desiredRotation.x() = temp.getValue()[0];
+    desiredRotation.y() = temp.getValue()[1];
+    desiredRotation.z() = temp.getValue()[2];
+    desiredRotation.w() = temp.getValue()[3];
     SbVec3fTovec3(dInfo->draggerTran->scaleFactor.getValue(), scale);
     SbVec3fTovec3(myCenterball->center.getValue(),center);
     center *= scale[0];
